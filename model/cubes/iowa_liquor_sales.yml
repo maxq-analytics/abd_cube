@@ -17,6 +17,11 @@ cubes:
       - name: sale_dollars
         sql: sale_dollars
         type: sum
+      - name: avg_sale_dollars
+        sql: sale_dollars
+        type: avg
+
+
     dimensions:
       - name: invoice_and_item_number
         sql: invoice_and_item_number
