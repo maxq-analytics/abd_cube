@@ -1,0 +1,84 @@
+cubes:
+  - name: iowa_liquor_sales
+    sql_table: marketing_data_report.iowa_liquor_sales
+    pre_aggregations:
+      # Pre-Aggregations definitions go here
+      # Learn more here: https://cube.dev/docs/caching/pre-aggregations/getting-started
+    joins: []
+    measures:
+      - name: count
+        type: count
+      - name: pack
+        sql: pack
+        type: sum
+      - name: bottle_volume_ml
+        sql: bottle_volume_ml
+        type: sum
+      - name: bottles_sold
+        sql: bottles_sold
+        type: sum
+    dimensions:
+      - name: invoice_and_item_number
+        sql: invoice_and_item_number
+        type: string
+        primary_key: true
+      - name: store_number
+        sql: store_number
+        type: string
+      - name: store_name
+        sql: store_name
+        type: string
+      - name: address
+        sql: address
+        type: string
+      - name: city
+        sql: city
+        type: string
+      - name: zip_code
+        sql: zip_code
+        type: string
+      - name: store_location
+        sql: store_location
+        type: string
+      - name: county_number
+        sql: county_number
+        type: string
+      - name: county
+        sql: county
+        type: string
+      - name: category
+        sql: category
+        type: string
+      - name: category_name
+        sql: category_name
+        type: string
+      - name: vendor_number
+        sql: vendor_number
+        type: string
+      - name: vendor_name
+        sql: vendor_name
+        type: string
+      - name: item_number
+        sql: item_number
+        type: string
+      - name: item_description
+        sql: item_description
+        type: string
+      - name: state_bottle_cost
+        sql: state_bottle_cost
+        type: string
+      - name: state_bottle_retail
+        sql: state_bottle_retail
+        type: string
+      - name: sale_dollars
+        sql: sale_dollars
+        type: string
+      - name: volume_sold_liters
+        sql: volume_sold_liters
+        type: string
+      - name: volume_sold_gallons
+        sql: volume_sold_gallons
+        type: string
+      - name: date
+        sql: date
+        type: time
