@@ -22,7 +22,7 @@ cubes:
         sql: sale_dollars
         type: avg
       - name: average_bottle_price
-        sql: "100.0 * {sale_dollars} / {bottles}"
+        sql: "100.0 * {sale_dollars} / {bottles_sold}"
         type: number
         format: percent
 
