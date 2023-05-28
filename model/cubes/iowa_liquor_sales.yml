@@ -6,7 +6,8 @@ cubes:
       # Learn more here: https://cube.dev/docs/caching/pre-aggregations/getting-started
     joins: []
     measures:
-      - name: count
+      - name: invoice_count
+        sql: invoice_and_item_number
         type: count
       - name: bottles_sold
         sql: bottles_sold
@@ -17,9 +18,13 @@ cubes:
       - name: sale_dollars
         sql: sale_dollars
         type: sum
-      - name: avg_sale_dollars
+      - name: avg_sale_dollars_p_invoice
         sql: sale_dollars
         type: avg
+      - name: average_bottle_price
+        sql: "100.0 * {sale_dollars} / {bottles}"
+        type: number
+        format: percent
 
 
     dimensions:
