@@ -30,7 +30,7 @@ cubes:
         sql: "{sale_dollars} / {bottles_sold}"
         type: number
       - name: average_liter_per_bottle
-        sql: "{volume_sold_liters} / {bottles_sold}"
+        sql: "ROUND({volume_sold_liters} / {bottles_sold},2)"
         type: number
         # Liters Sold
       - name: average_liter_price
