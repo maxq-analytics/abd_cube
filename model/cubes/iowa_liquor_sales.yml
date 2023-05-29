@@ -29,7 +29,7 @@ cubes:
       - name: average_bottle_price
         sql: "{sale_dollars} / {bottles_sold}"
         type: number
-      - name: average_volume_per_liter
+      - name: average_liter_per_bottle
         sql: "{volume_sold_liters} / {bottles_sold}"
         type: number
         # Liters Sold
