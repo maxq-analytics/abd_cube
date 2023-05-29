@@ -68,8 +68,8 @@ cubes:
       - name: state_bottle_retail
         sql: state_bottle_retail
         type: string
-      - name: item_category
-        sql: item_category
+      - name: brand_name
+        sql: brand_name
         type: string
       - name: date
         sql: date
