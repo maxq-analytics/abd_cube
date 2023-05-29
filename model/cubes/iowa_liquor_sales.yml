@@ -20,21 +20,21 @@ cubes:
         type: sum
         # Invoice Count
       - name: average_sale_dollars_per_invoice
-        sql: "{sale_dollars} / {invoice_count}"
+        sql: "ROUND({sale_dollars} / {invoice_count},2)"
         type: number
       - name: average_bottles_sold_per_invoice
-        sql: "{bottles_sold} / {invoice_count}"
+        sql: "ROUND({bottles_sold} / {invoice_count},2)"
         type: number
         # Bottles Sold
       - name: average_bottle_price
-        sql: "{sale_dollars} / {bottles_sold}"
+        sql: "ROUND({sale_dollars} / {bottles_sold},2)"
         type: number
       - name: average_liter_per_bottle
         sql: "ROUND({volume_sold_liters} / {bottles_sold},2)"
         type: number
         # Liters Sold
       - name: average_liter_price
-        sql: "{sale_dollars} / {volume_sold_liters}"
+        sql: "ROUND({sale_dollars} / {volume_sold_liters},2)"
         type: number
         
 
