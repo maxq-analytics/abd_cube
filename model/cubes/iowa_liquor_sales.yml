@@ -18,12 +18,25 @@ cubes:
       - name: sale_dollars
         sql: sale_dollars
         type: sum
-      - name: avg_sale_dollars_p_invoice
-        sql: sale_dollars
-        type: avg
+        # Invoice Count
+      - name: average_sale_dollars_per_invoice
+        sql: "{sale_dollars} / {invoice_count}"
+        type: number
+      - name: average_bottles_sold_per_invoice
+        sql: "{bottles_sold} / {invoice_count}"
+        type: number
+        # Bottles Sold
       - name: average_bottle_price
         sql: "{sale_dollars} / {bottles_sold}"
         type: number
+      - name: average_volume_per_liter
+        sql: "{volume_sold_liters} / {bottles_sold}"
+        type: number
+        # Liters Sold
+      - name: average_liter_price
+        sql: "{sale_dollars} / {volume_sold_liters}"
+        type: number
+        
 
 
     dimensions:
