@@ -24,6 +24,9 @@ cubes:
       - name: state_bottle_retail
         sql: state_bottle_retail
         type: string
+      - name: category_name
+        sql: category_name
+        type: string
 
 
 
