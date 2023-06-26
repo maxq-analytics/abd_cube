@@ -1,0 +1,20 @@
+cubes:
+  - name: iowa_liquor_sales
+    sql_table: dbt_dev_diageo.iowa_invoices
+    joins:
+      - name: dbt_dev_diageo.iowa_stores
+        relationship: many_to_one
+        sql: "{CUBE.store_number} = {dbt_dev_diageo.iowa_stores.store_number}"
+
+    measures:
+      - name: invoice_count
+        sql: invoice_and_item_number
+        type: count
+
+    dimensions:
+      - name: date
+        sql: date
+        type: time
+      - name: store_name
+        sql: store_name
+        type: string
