@@ -1,0 +1,32 @@
+cubes:
+  - name: iowa_items
+    sql_table: dbt_dev_diageo.iowa_items
+
+    dimensions:
+      - name: item_number
+        sql: item_number
+        type: string
+      - name: item_description
+        sql: item_description
+        type: string
+      - name: store_address
+        sql: store_address
+        type: string
+      - name: items_in_pack
+        sql: items_in_pack
+        type: string
+      - name: brand_name
+        sql: brand_name
+        type: string
+      - name: bottle_volume_ml
+        sql: bottle_volume_ml
+        type: string
+      - name: state_bottle_retail
+        sql: state_bottle_retail
+        type: string
+
+
+
+
+
+

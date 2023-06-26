@@ -1,20 +1,57 @@
 cubes:
-  - name: iowa_liquor_sales
+  - name: iowa_invoices
     sql_table: dbt_dev_diageo.iowa_invoices
     joins:
-      - name: dbt_dev_diageo.iowa_stores
+      - name: iowa_stores
         relationship: many_to_one
-        sql: "{CUBE.store_number} = {dbt_dev_diageo.iowa_stores.store_number}"
+        sql: "{CUBE.store_number} = {iowa_stores.store_number}"
+      - name: iowa_items
+        relationship: many_to_one
+        sql: "{CUBE.item_number} = {iowa_items.item_number}"
 
     measures:
       - name: invoice_count
         sql: invoice_and_item_number
         type: count
+      - name: bottles_sold
+        sql: bottles_sold
+        type: sum
+      - name: volume_sold_liters
+        sql: volume_sold_liters
+        type: sum
+      - name: sale_dollars
+        sql: sale_dollars
+        type: sum
+        # Invoice Count
+      - name: average_sale_dollars_per_invoice
+        sql: "ROUND({sale_dollars} / {invoice_count},2)"
+        type: number
+      - name: average_bottles_sold_per_invoice
+        sql: "ROUND({bottles_sold} / {invoice_count},2)"
+        type: number
+        # Bottles Sold
+      - name: average_sale_dollars_per_bottle
+        sql: "ROUND({sale_dollars} / {bottles_sold},2)"
+        type: number
+      - name: average_liter_per_bottle
+        sql: "ROUND({volume_sold_liters} / {bottles_sold},2)"
+        type: number
+        # Liters Sold
+      - name: average_sale_dollars_per_liter
+        sql: "ROUND({sale_dollars} / {volume_sold_liters},2)"
+        type: number
 
     dimensions:
-      - name: date
-        sql: date
+      - name: invoice_and_item_number
+        sql: invoice_and_item_number
+        type: string
+        primary_key: true
+      - name: invoice_date
+        sql: invoice_date
         type: time
-      - name: store_name
-        sql: store_name
+      - name: store_number
+        sql: store_number
+        type: string
+      - name: item_number
+        sql: item_number
         type: string
