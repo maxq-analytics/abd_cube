@@ -45,6 +45,9 @@ cubes:
       - name: store_number
         sql: store_number
         type: string
+      - name: store_uuid
+        sql: store_uuid
+        type: string
       - name: item_number
         sql: item_number
         type: string
