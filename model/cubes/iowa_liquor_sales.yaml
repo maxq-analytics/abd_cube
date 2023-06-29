@@ -42,6 +42,9 @@ cubes:
       - name: invoice_date
         sql: invoice_date
         type: time
+      - name: date
+        sql: invoice_date
+        type: time
       - name: store_number
         sql: store_number
         type: string
