@@ -1,7 +1,7 @@
 
 cubes:
   - name: ext_invoices
-    sql_table: marketing_data_report.ext_invoices
+    sql_table: abd_dbt.ext_invoices
 
     measures:
       - name: invoice_count
