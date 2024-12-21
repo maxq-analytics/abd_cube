@@ -3,6 +3,44 @@ cubes:
   - name: ext_invoices
     sql_table: abd_dbt.ext_invoices
 
+    dimensions:
+      # IDs
+      - name: invoice_id
+        sql: invoice_id
+        type: string
+        primary_key: true
+      - name: store_id
+        sql: store_id
+        type: string
+      - name: item_id
+        sql: item_id
+        type: string
+
+      # Timestamps
+      - name: date_day
+        sql: date_day
+        type: time
+
+      # Store | Properties
+      - name: store_address
+        sql: store_address
+        type: string
+      - name: store_name
+        sql: store_name
+        type: string
+      - name: store_address
+        sql: store_address
+        type: string
+      - name: store_city
+        sql: store_city
+        type: string
+      - name: item_description
+        sql: item_description
+        type: string
+      - name: category_name
+        sql: category_name
+        type: string
+
     measures:
       - name: invoice_count
         sql: invoice_id
@@ -34,42 +72,3 @@ cubes:
       - name: average_retail_value_per_liter
         sql: "ROUND({retail_value_items_sold} / {volume_sold_liters},2)"
         type: number
-
-    dimensions:
-      - name: invoice_id
-        sql: invoice_id
-        type: string
-        primary_key: true
-      - name: store_id
-        sql: store_id
-        type: string
-      - name: item_id
-        sql: item_id
-        type: string
-
-      # Timestamps
-      - name: date_day
-        sql: date_day
-        type: time
-
-      - name: item_description
-        sql: item_description
-        type: string
-      - name: category_name
-        sql: category_name
-        type: string
-
-      # Store | Properties
-      - name: store_address
-        sql: store_address
-        type: string
-      - name: store_name
-        sql: store_name
-        type: string
-      - name: store_address
-        sql: store_address
-        type: string
-      - name: store_city
-        sql: store_city
-        type: string
-
