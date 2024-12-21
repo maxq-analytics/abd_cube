@@ -18,7 +18,7 @@ cubes:
 
       # Timestamps
       - name: date_day
-        sql: date_day
+        sql: date_day_time
         type: time
 
       # Store | Properties
