@@ -41,10 +41,10 @@ cubes:
         sql: category_name
         type: string
       - name: brand_name
-        sql: category_name
+        sql: brand_name
         type: string
       - name: vendor_name
-        sql: category_name
+        sql: vendor_name
         type: string
 
     measures:
