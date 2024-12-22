@@ -40,6 +40,12 @@ cubes:
       - name: category_name
         sql: category_name
         type: string
+      - name: brand_name
+        sql: category_name
+        type: string
+      - name: vendor_name
+        sql: category_name
+        type: string
 
     measures:
       - name: invoice_count
