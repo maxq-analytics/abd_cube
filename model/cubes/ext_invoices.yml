@@ -34,8 +34,8 @@ cubes:
         meta:
           ai:
             searchable: true
-          description: "The store name including it's own store number when available"
-          ai_query: "“Always query this field using CONTAINS instead of “=“ to allow for a faux fuzzy match”"
+          description: "Always query this field using CONTAINS instead of “=“ to allow for a faux fuzzy match"
+          ai_query: "Always query this field using CONTAINS instead of “=“ to allow for a faux fuzzy match"
       - name: store_address
         sql: store_address
         type: string
