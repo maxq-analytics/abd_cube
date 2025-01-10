@@ -88,20 +88,21 @@ cubes:
         type: sum
         
       # Ratios
+        # Per Invoice
       - name: average_sale_dollars_per_invoice
         sql: "ROUND({retail_value_items_sold} / {invoice_count},2)"
         type: number
       - name: average_bottles_sold_per_invoice
         sql: "ROUND({bottles_sold} / {invoice_count},2)"
         type: number
-        # Bottles Sold
+        # Per Bottle Sold
       - name: average_sale_dollars_per_bottle
         sql: "ROUND({retail_value_items_sold} / {bottles_sold},2)"
         type: number
       - name: average_liter_per_bottle
         sql: "ROUND({volume_sold_liters} / {bottles_sold},2)"
         type: number
-        # Liters Sold
+        # Per Liter Sold
       - name: average_retail_value_per_liter
         sql: "ROUND({retail_value_items_sold} / {volume_sold_liters},2)"
         type: number
@@ -131,3 +132,20 @@ cubes:
         rolling_window:
           trailing: 12 month
           offset: end
+      - name: retail_value_items_sold_24m
+        sql: retail_value_items_sold
+        type: sum
+        rolling_window:
+          trailing: 24 month
+          offset: end
+
+      # Growth
+      - name: retail_value_items_sold_12m_min_1Y
+        sql: "{retail_value_items_sold_24m} - {retail_value_items_sold_12m}"
+        type: number
+      - name: retail_value_items_sold_12m_ratio
+        sql: "ROUND((({retail_value_items_sold_12m} - ({retail_value_items_sold_24m} - {retail_value_items_sold_12m})) / ({retail_value_items_sold_12m_min_1Y}))*100,2)"
+        type: number
+        format: percent
+        meta:
+          description: "The 12-month trailing % growth of the retail value sold"
