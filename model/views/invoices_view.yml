@@ -1,5 +1,5 @@
 views:
-  - name: invoices_views
+  - name: invoices_view
 
     cubes:
       - join_path: ext_invoices
