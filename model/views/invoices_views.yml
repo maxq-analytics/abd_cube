@@ -1,0 +1,34 @@
+views:
+  - name: invoices_views
+
+    cubes:
+      - join_path: ext_invoices
+        prefix: false
+        includes:
+          # IDs
+          - invoice_id
+          
+          # Timing
+          - date_day
+
+          # Properties
+          - store_address
+          - store_name
+          - store_city
+          - item_description
+          - category_name
+          - brand_name
+          - vendor_name
+
+          # Measures | Absolute
+          - invoice_count
+          - bottles_sold
+          - volume_sold_liters
+          - retail_value_items_sold
+
+          # Measures | Ratios
+          - average_sale_dollars_per_invoice
+          - average_bottles_sold_per_invoice
+          - average_sale_dollars_per_bottle
+          - average_liter_per_bottle
+          - average_retail_value_per_liter
