@@ -90,42 +90,51 @@ cubes:
       # Ratios
         # Per Invoice
       - name: average_sale_dollars_per_invoice
+        title: "Average retail value per Invoice"
         sql: "ROUND({retail_value_items_sold} / NULLIF({invoice_count}, 0), 2)"
         type: number
       - name: average_bottles_sold_per_invoice
+        title: "Average bottles per Invoice"
         sql: "ROUND({bottles_sold} / NULLIF({invoice_count}, 0), 2)"
         type: number
         # Per Bottle Sold
       - name: average_sale_dollars_per_bottle
+        title: "Average retail price per Bottle"
         sql: "ROUND({retail_value_items_sold} / NULLIF({bottles_sold}, 0), 2)"
         type: number
       - name: average_liter_per_bottle
+        title: "Average liters per Bottle"
         sql: "ROUND({volume_sold_liters} / NULLIF({bottles_sold}, 0), 2)"
         type: number
       - name: average_retail_value_per_liter
+        title: "Average retail price per Liter"
         sql: "ROUND({retail_value_items_sold} / NULLIF({volume_sold_liters}, 0), 2)"
         type: number
 
       # Trailing
       - name: invoice_count_12m
+        title: "Invoices sent (LTM)"
         sql: invoice_id
         type: count
         rolling_window:
           trailing: 12 month
           offset: end
       - name: bottles_sold_12m
+        title: "Bottles sold (LTM)"
         sql: bottles_sold
         type: sum
         rolling_window:
           trailing: 12 month
           offset: end
       - name: volume_sold_liters_12m
+        title: "Liters sold (LTM)"
         sql: volume_sold_liters
         type: sum
         rolling_window:
           trailing: 12 month
           offset: end
       - name: retail_value_items_sold_12m
+        title: "Retail value sold (LTM)"
         sql: retail_value_items_sold
         type: sum
         rolling_window:
@@ -143,6 +152,7 @@ cubes:
         sql: "NULLIF({retail_value_items_sold_24m} - {retail_value_items_sold_12m},0)"
         type: number
       - name: retail_value_items_sold_annual_growth_ratio
+        title: "Retail value sold annual growth rate"
         sql: "ROUND((({retail_value_items_sold_12m} - ({retail_value_items_sold_24m} - {retail_value_items_sold_12m})) / ({retail_value_items_sold_12m_min_1Y}))*100,2)"
         type: number
         format: percent
