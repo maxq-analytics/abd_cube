@@ -90,21 +90,20 @@ cubes:
       # Ratios
         # Per Invoice
       - name: average_sale_dollars_per_invoice
-        sql: "ROUND({retail_value_items_sold} / {invoice_count},2)"
+        sql: "ROUND({retail_value_items_sold} / NULLIF({invoice_count}, 0), 2)"
         type: number
       - name: average_bottles_sold_per_invoice
-        sql: "ROUND({bottles_sold} / {invoice_count},2)"
+        sql: "ROUND({bottles_sold} / NULLIF({invoice_count}, 0), 2)"
         type: number
         # Per Bottle Sold
       - name: average_sale_dollars_per_bottle
-        sql: "ROUND({retail_value_items_sold} / {bottles_sold},2)"
+        sql: "ROUND({retail_value_items_sold} / NULLIF({bottles_sold}, 0), 2)"
         type: number
       - name: average_liter_per_bottle
-        sql: "ROUND({volume_sold_liters} / {bottles_sold},2)"
+        sql: "ROUND({volume_sold_liters} / NULLIF({bottles_sold}, 0), 2)"
         type: number
-        # Per Liter Sold
       - name: average_retail_value_per_liter
-        sql: "ROUND({retail_value_items_sold} / {volume_sold_liters},2)"
+        sql: "ROUND({retail_value_items_sold} / NULLIF({volume_sold_liters}, 0), 2)"
         type: number
 
       # Trailing
