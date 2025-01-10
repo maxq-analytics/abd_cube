@@ -1,5 +1,5 @@
 views:
-  - name: invoices_view
+  - name: abd_analytics
 
     cubes:
       - join_path: ext_invoices
