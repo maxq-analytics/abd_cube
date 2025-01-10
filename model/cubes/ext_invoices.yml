@@ -86,7 +86,8 @@ cubes:
       - name: retail_value_items_sold
         sql: retail_value_items_sold
         type: sum
-        # Invoice Count
+        
+      # Ratios
       - name: average_sale_dollars_per_invoice
         sql: "ROUND({retail_value_items_sold} / {invoice_count},2)"
         type: number
@@ -104,3 +105,29 @@ cubes:
       - name: average_retail_value_per_liter
         sql: "ROUND({retail_value_items_sold} / {volume_sold_liters},2)"
         type: number
+
+      # Trailing
+      - name: invoice_count_12m
+        sql: invoice_id
+        type: count
+        rolling_window:
+          trailing: 12 month
+          offset: end
+      - name: bottles_sold_12m
+        sql: bottles_sold
+        type: sum
+        rolling_window:
+          trailing: 12 month
+          offset: end
+      - name: volume_sold_liters_12m
+        sql: volume_sold_liters
+        type: sum
+        rolling_window:
+          trailing: 12 month
+          offset: end
+      - name: retail_value_items_sold_12m
+        sql: retail_value_items_sold
+        type: sum
+        rolling_window:
+          trailing: 12 month
+          offset: end

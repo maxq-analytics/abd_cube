@@ -32,3 +32,9 @@ views:
           - average_sale_dollars_per_bottle
           - average_liter_per_bottle
           - average_retail_value_per_liter
+
+          # Measures | Trailing
+          - invoice_count_12m
+          - bottles_sold_12m
+          - volume_sold_liters_12m
+          - retail_value_items_sold_12m
