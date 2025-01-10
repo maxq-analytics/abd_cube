@@ -25,27 +25,51 @@ cubes:
       - name: store_address
         sql: store_address
         type: string
+        meta:
+          ai:
+            searchable: true
       - name: store_name
         sql: store_name
         type: string
+        meta:
+          ai:
+            searchable: true
       - name: store_address
         sql: store_address
         type: string
+        meta:
+          ai:
+            searchable: true
       - name: store_city
         sql: store_city
         type: string
+        meta:
+          ai:
+            searchable: true 
       - name: item_description
         sql: item_description
         type: string
+        meta:
+          ai:
+            searchable: true
       - name: category_name
         sql: category_name
         type: string
+        meta:
+          ai:
+            searchable: true
       - name: brand_name
         sql: brand_name
         type: string
+        meta:
+          ai:
+            searchable: true
       - name: vendor_name
         sql: vendor_name
         type: string
+        meta:
+          ai:
+            searchable: true
 
     measures:
       - name: invoice_count
