@@ -31,6 +31,7 @@ cubes:
       - name: store_name
         sql: store_name
         type: string
+        description: “Always query this field using CONTAINS instead of “=“ to allow for a faux fuzzy match”
         meta:
           ai:
             searchable: true
