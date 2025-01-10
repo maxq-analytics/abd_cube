@@ -143,7 +143,7 @@ cubes:
       - name: retail_value_items_sold_12m_min_1Y
         sql: "{retail_value_items_sold_24m} - {retail_value_items_sold_12m}"
         type: number
-      - name: retail_value_items_sold_12m_ratio
+      - name: retail_value_items_sold_annual_growth_ratio
         sql: "ROUND((({retail_value_items_sold_12m} - ({retail_value_items_sold_24m} - {retail_value_items_sold_12m})) / ({retail_value_items_sold_12m_min_1Y}))*100,2)"
         type: number
         format: percent
