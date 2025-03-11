@@ -23,12 +23,14 @@ cubes:
 
       # Store | Properties
       - name: store_address
+        title: "Store Address"
         sql: store_address
         type: string
         meta:
           ai:
             searchable: true
       - name: store_name
+        title: "Store Name"
         sql: store_name
         type: string
         meta:
@@ -43,30 +45,35 @@ cubes:
           ai:
             searchable: true
       - name: store_city
+        title: "City"
         sql: store_city
         type: string
         meta:
           ai:
             searchable: true 
       - name: item_description
+        title: "Item Description"
         sql: item_description
         type: string
         meta:
           ai:
             searchable: true
       - name: category_name
+        title: "Category"
         sql: category_name
         type: string
         meta:
           ai:
             searchable: true
       - name: brand_name
+        title: Brand
         sql: brand_name
         type: string
         meta:
           ai:
             searchable: true
       - name: vendor_name
+        title: "Vendor"
         sql: vendor_name
         type: string
         meta:
@@ -78,12 +85,15 @@ cubes:
         sql: invoice_id
         type: count
       - name: bottles_sold
+        title: "Bottles Sold"
         sql: bottles_sold
         type: sum
       - name: volume_sold_liters
+        title: "Liters Sold"
         sql: volume_sold_liters
         type: sum
       - name: retail_value_items_sold
+        title: "Retail Value Sold"
         sql: retail_value_items_sold
         type: sum
         
