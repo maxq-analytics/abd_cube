@@ -3,6 +3,17 @@ cubes:
   - name: ext_invoices
     sql_table: abd_dbt.ext_invoices
 
+    pre_aggregations:
+      - name: brand_summary
+        refresh_key:
+          every: 1 day
+        dimensions:
+          - CUBE.brand_name
+        measures:
+          - CUBE.invoice_count
+          - CUBE.bottles_sold
+
+
     dimensions:
       # IDs
       - name: invoice_id
