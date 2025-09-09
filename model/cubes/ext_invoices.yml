@@ -26,7 +26,13 @@ cubes:
       - name: item_id
         sql: item_id
         type: string
-
+      - name: owner_id
+        sql: owner_id
+        type: string
+        meta:
+          ai:
+            searchable: true
+            
       # Timestamps
       - name: date_day
         sql: date_day_time
@@ -90,6 +96,13 @@ cubes:
         meta:
           ai:
             searchable: true
+      - name: owner_name
+        title: "Owner"
+        sql: owner_name
+        type: string
+        meta:
+          ai:
+            searchable: true    
 
     measures:
       - name: invoice_count
