@@ -28,7 +28,7 @@ cubes:
         type: string
       - name: owner_id
         sql: owner_id
-        type: string
+        type: number
         meta:
           ai:
             searchable: true
