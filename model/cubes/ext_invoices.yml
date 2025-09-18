@@ -26,8 +26,8 @@ cubes:
       - name: item_id
         sql: item_id
         type: string
-      - name: owner_id
-        sql: owner_id
+      - name: company_id
+        sql: company_id
         type: number
         meta:
           ai:
@@ -96,9 +96,9 @@ cubes:
         meta:
           ai:
             searchable: true
-      - name: owner_name
-        title: "Owner"
-        sql: owner_name
+      - name: company_name
+        title: "Company"
+        sql: company_name
         type: string
         meta:
           ai:

@@ -7,7 +7,7 @@ views:
         includes:
           # IDs
           - invoice_id
-          - owner_id
+          - company_id
           
           # Timing
           - date_day
@@ -20,7 +20,7 @@ views:
           - category_name
           - brand_name
           - vendor_name
-          - owner_name
+          - company_name
 
           # Measures | Absolute
           - invoice_count
